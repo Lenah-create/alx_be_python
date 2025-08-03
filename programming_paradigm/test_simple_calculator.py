@@ -15,15 +15,14 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.subtract(5, 3), 2)
         self.assertEqual(self.calc.subtract(0, 3), -3)
 
-    def test_multiplication(self):  # <-- Name must match exactly
+    def test_multiplication(self):
         self.assertEqual(self.calc.multiply(2, 3), 6)
         self.assertEqual(self.calc.multiply(0, 100), 0)
 
-    def test_divide(self):
+    def test_division(self):  # <-- Renamed to match checker
         self.assertEqual(self.calc.divide(6, 3), 2)
         self.assertEqual(self.calc.divide(5, 2), 2.5)
         self.assertIsNone(self.calc.divide(5, 0))
 
 if __name__ == '__main__':
     unittest.main()
-
