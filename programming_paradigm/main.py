@@ -6,11 +6,16 @@ def main():
         print("Usage: python main.py <numerator> <denominator>")
         sys.exit(1)
 
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
+    try:
+        numerator = float(sys.argv[1])
+        denominator = float(sys.argv[2])
+    except ValueError:
+        print("Both inputs must be numbers.")
+        sys.exit(1)
 
     result = safe_divide(numerator, denominator)
     print(result)
 
 if __name__ == "__main__":
     main()
+
